@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Welcome To My Space</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='85'>🌍</text></svg>">
+        <style>
+            #bg {
+                display: none;
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+
+						<div class="content">
+							<div class="inner">
+								<h1>Michael Egboja's Space</h1>
+								<p>Welcome to my Webpage. I designed this website as a way of introducing my self to the world. <br/>
+                                Feel free to look around and contact me for any service you need.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#about">About</a></li>
+                                <li><a href="#work">Skills</a></li>
+								<li><a href="#contact">Contact</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Intro</h2>
+								<!--<span class="image main"><img src="../static/images/pic01.jpg" alt="" /></span>-->
+								<p>Hi, I'm Michael Egboja, a Python developer with a passion for data, systems and the web. I work extensively with Python,
+                                    handling and processing data with Pandas, Scikit-learn, and Statsmodels, and developing web applications with Flask
+                                     while also interacting immensely with the web.</p>
+								<p>In addition, I studied Physics and outside the coding world, I love reading, playing games and listening to music. Welcome to my space!</p>
+                                <hr/>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Skills</h2>
+                                <ul>
+                                    <li>Data Science (Pandas, Numpy, Scikit-learn, Matplotlib, Statsmodels)</li>
+                                    <li>Data Analysis & Data Entry</li>
+                                    <li>SQL</li>
+                                    <li>Web Scraping (BeautifulSoup / Selenium)</li>
+                                    <li>Automation</li>
+                                    <li>Backend And API Design</li>
+                                </ul>
+								<h2 class="major">Experience</h2>
+                                <p>Here are some of the projects I have worked on:</p>
+                                <ul>
+                                    <li>I built a Bitcoin daily price prediction model using pandas for data cleaning and Scikit-learn for creating and training the model.</li>
+                                    <li>I simulated mobile banking transfer process, having all the features and authentication process.</li>
+                                    <li>I built a monthly expense tracker, having so many features to evaluate your expenses, which also sends
+                                    a monthly report to your email.</li>
+                                </ul>
+                                <hr/>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About Michael Egboja</h2>
+								<!--<span class="image main"><img src="../static/images/pic03.jpg" alt="" /></span>-->
+                                <p>I'm a detail oriented Python developer with hands-on experience in data analysis, machine learning, web scraping, automation and backend development.
+                                    My toolkit includes Pandas, Numpy & Matplotlib for data manipulation, Scikit-learn and Statsmodels for building and evaluating models, and
+                                    Flask for backend. I'm always looking to grow, solve real problems with code, and build things that matter.</p>
+								<p>Aside my love for programming, I have always had a deep interest in systems, understanding how and why things work the
+                                way they do.</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                        {% for category, message in messages %}
+                                            <div id="flash-message" style="
+                                                display: flex;
+                                                justify-content: space-between;
+                                                align-items: center;
+                                                padding: 10px 15px;
+                                                border-radius: 5px;
+                                                background-color: {% if category == 'success' %}rgba(0,128,0,0.3){% else %}rgba(255,0,0,0.3){% endif %};
+                                                color: {% if category == 'success' %}lightgreen{% else %}red{% endif %};
+                                                margin-bottom: 15px;
+                                            ">
+                                                <span>{{ message }}</span>
+                                                <span onclick="document.getElementById('flash-message').style.display='none'"
+                                                      style="cursor: pointer; font-size: 1.2em; margin-left: 15px;">&times;</span>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+
+								<form method="post" action="/#contact">
+                                    {{ form.hidden_tag() }}
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="https://x.com/SmallG0d" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+									<li><a href="https://wa.me/qr/LH7YQJ5NY56WF1" class="icon brands fa-whatsapp" target="_blank"><span class="label">WhatsApp</span></a></li>
+									<!--<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>-->
+								</ul>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; 2026. Design By: Yours truly & <a href="https://html5up.net" target="_blank">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+    <canvas id="starfield" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+<script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Stars
+    const stars = Array.from({ length: 1000 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        speed: Math.random() * 0.5 + 0.1,
+        opacity: Math.random()
+    }));
+
+    // Meteors
+    function createMeteor() {
+        return {
+            x: Math.random() * canvas.width * 0.5,
+            y: Math.random() * canvas.height * 0.3,
+            length: Math.random() * 150 + 80,
+            speed: Math.random() * 11 + 4,
+            opacity: 1,
+            angle: Math.PI / 4,
+            delay: 360
+        };
+    }
+
+    const meteors = Array.from({ length: 1 }, () => createMeteor());
+
+    function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw stars
+        stars.forEach(star => {
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+            ctx.fill();
+            star.opacity += (Math.random() - 0.5) * 0.05;
+            star.opacity = Math.max(0.1, Math.min(1, star.opacity));
+            star.y += star.speed;
+            if (star.y > canvas.height) {
+                star.y = 0;
+                star.x = Math.random() * canvas.width;
+            }
+        });
+
+        // Draw meteors
+        meteors.forEach((meteor, i) => {
+            if (meteor.delay > 0) {
+                meteor.delay--;
+                return;
+            }
+
+            ctx.beginPath();
+            ctx.moveTo(meteor.x, meteor.y);
+            ctx.lineTo(meteor.x - meteor.length * Math.cos(meteor.angle),
+                       meteor.y - meteor.length * Math.sin(meteor.angle));
+            const gradient = ctx.createLinearGradient(
+                meteor.x, meteor.y,
+                meteor.x - meteor.length * Math.cos(meteor.angle),
+                meteor.y - meteor.length * Math.sin(meteor.angle)
+            );
+            gradient.addColorStop(0, `rgba(255, 255, 255, ${meteor.opacity})`);
+            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            meteor.x += meteor.speed;
+            meteor.y += meteor.speed;
+            meteor.opacity -= 0.008;
+
+            if (meteor.x > canvas.width || meteor.y > canvas.height || meteor.opacity <= 0) {
+                meteors[i] = createMeteor();
+            }
+        });
+
+        requestAnimationFrame(drawStars);
+    }
+
+    drawStars();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>
+
+	</body>
+</html>
