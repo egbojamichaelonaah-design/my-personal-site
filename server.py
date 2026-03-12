@@ -21,27 +21,26 @@ def home():
         name = form.name.data
         email = form.email.data
         message = form.message.data
-        c = 5
-        while c > 0:
-            try:
-                my_email = "romeoclimate@gmail.com"
-                password = os.environ.get('GMAIL_APP_PASSWORD')
-                with smtplib.SMTP("smtp.gmail.com", 587) as connection:
-                    connection.starttls()
-                    connection.login(user=my_email, password=password)
-                    connection.sendmail(from_addr=my_email,
-                                        to_addrs="michaelonaahegboja@gmail.com",
-                                        msg=f'Subject:Message From Your Website.\n\nSENDER INFO:\nName: {name}\nEmail:'
-                                            f' {email}\n\nMessage:\n"{message}"')
-                    flash("Message sent successfully!", "success")
-                break
-            except:
-                print("Repeated trial in sending Mail.")
-            c -= 1
+        try:
+            my_email = "romeoclimate@gmail.com"
+            password = os.environ.get('GMAIL_APP_PASSWORD')
+            with smtplib.SMTP("smtp.gmail.com", 587, timeout=30) as connection:
+                connection.starttls()
+                connection.login(user=my_email, password=password)
+                connection.sendmail(from_addr=my_email,
+                                    to_addrs="michaelonaahegboja@gmail.com",
+                                    msg=f'Subject:Message From Your Website.\n\nSENDER INFO:\nName: {name}\nEmail:'
+                                        f' {email}\n\nMessage:\n"{message}"')
+            flash("Message sent successfully!", "success")              
+        except Exception as e:
+            print(f"Email failed: {e}")
+            flash("Failed to send message. Please try again.", "error")
+            
 
     return render_template("index.html", form=form)
 
 
 if __name__== "__main__":
     app.run(debug=False)
+
 
