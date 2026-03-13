@@ -13,4 +13,5 @@ MarkupSafe==3.0.3
 packaging==26.0
 Werkzeug==3.1.6
 WTForms==3.2.1
-resend
+resend==2.23.0
+
