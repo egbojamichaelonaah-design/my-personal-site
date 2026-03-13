@@ -21,7 +21,7 @@ def send_email(name, email, message):
             "from": "onboarding@resend.dev",
             "to": "egbojamichaelonaah@gmail.com",
             "subject": "Message From Your Website.",
-            "text": f'SENDER INFO:\nName: {name}\nEmail: {email}\n\nMessage:\n"{message}"'
+            "text": f'SENDER INFO\nName: {name}\nEmail: {email}\n\nMessage:\n"{message}"'
         })
         print("Email sent successfully!")
         return True
